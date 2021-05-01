@@ -149,8 +149,8 @@ sOs = [
 
 @bot.event  # Startup
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(
-        type=discord.ActivityType.watching, name="you"))
+    #await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="you"))
+    await bot.change_presence(activity = Game(name = ">cmds (For all cmds)"))
     print("It's all here")
 
 
@@ -258,6 +258,14 @@ async def ping(ctx):
     Checks if bot is alive
     '''
     await ctx.send('Hello world')
+# custome help commands
+@bot.command()
+async def cmds(ctx): # Help command
+    if check_admin ==True:
+    #if ctx.message.author.check_admin:
+      with open("cmds.md") as f:
+          cmds = f.read()
+      await ctx.send("__**HawkBot Bot Commands:**__```CS\n" + cmds + "```")
 
 
 @bot.command()
