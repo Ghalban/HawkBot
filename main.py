@@ -13,9 +13,8 @@ from pprint import pprint
 intents = discord.Intents.default()
 intents.members = True
 
-#TODO write custom help command
 bot = commands.Bot(
-    command_prefix='>',
+    command_prefix='>', help_command=None,
     intents=intents,
     description=
     "This is a helper bot written with discord.py and hosted on repl.it\nA work in progress\nMay go offline as its updated.\n\nIf you want to help build this bot or host it on your MSU student server contact Rawda"
@@ -259,6 +258,27 @@ async def ping(ctx):
     '''
     await ctx.send('Hello world')
 
+@bot.command()
+async def help(ctx):
+  '''
+    Shows what bot can do
+  '''
+  with open("cmds.md") as f:
+      cmds = f.read()
+
+  embed = discord.Embed(  
+          color=0xd1190d)
+
+  embed.add_field(name="**About**", value="This is a helper bot written with discord.py and hosted on replit.\nA work in progress. May go offline as its updated.\nIf you want to help build this bot or host it on your MSU student server contact Rawda.", inline=False)
+
+  embed.add_field(name="**Commands**", value=cmds, inline=False) 
+
+  embed.set_thumbnail(
+        url=
+        "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/281/white-question-mark_2754.png")
+
+  await ctx.send(embed=embed)
+
 
 @bot.command()
 async def info(ctx):
@@ -281,6 +301,7 @@ async def info(ctx):
     embed.set_footer(
         text=f"Requested by {ctx.author.name}#{ctx.author.discriminator}",
         icon_url=ctx.author.avatar_url)
+
     await ctx.send(embed=embed)
 
 

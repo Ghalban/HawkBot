@@ -1,19 +1,20 @@
-Search fix
-  get the first 3 results. for each scrape
-    link
-    title
-    summary
+**Search fix:**
+  get the first 3 results. 
+  + for each scrape
+    + link
+    + title
+    + summary
 
-Help pages / Quick links
+**Help pages / Quick links**
 
-  Freshmen/new transfer starter pack 
-    dining
-    dorms
-    parking
-    *advice from alumns (A&I special) 
-    >finaid
+  + Freshmen/new transfer starter pack 
+    * dining
+    * dorms
+    * parking
+    * *advice from alumns (A&I special) 
+    * finaid
 
-  Academic calendar  (scraped?)
+  + Academic calendar  (scraped?)
 
   New semester starter pack
     links to
