@@ -14,4 +14,4 @@ def keep_alive():
     t = Thread(target=run)
     t.start()
 
-    #So it doesnt die also got uptimerobot running every 5 mins
+    #So it doesnt die also got uptimerobot running every 45 mins

@@ -7,3 +7,5 @@
 ➤ ` >links ` Returns list of useful links
       
 ➤ ` >search `   Shows results scraped from MSU website ` #in progress! `
+
+➤ ` hawkbot ` prompts response based on message content
