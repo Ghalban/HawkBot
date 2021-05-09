@@ -30,19 +30,19 @@ goodmorning = ["🇪🇸 Buenos días!",
     "No.", "🇮🇹 Buongiorno!", "Good morning!", "🇸🇦!صباح الخير", "🇯🇵 おはよう！\nhttps://res.cloudinary.com/animillust/video/upload/v1617837295/audio/weebohio_qyllfi.webm","https://youtu.be/03m9DzSEB5M", "https://youtu.be/5CGdX1hhxyo","https://youtu.be/8O27jMawP-o?t=11", "https://youtu.be/ii3NEUSiOdo","https://youtu.be/8nGcWFRwhOM"]
 
 hello = [
-    "Hello", "What’s shakin’?", "I'm here for you" "What’s up?", "Everything OK?", "Hey", "Yo", "Hi! (˵'v'˵)/ ", "Yes hello", "Can I help you?", "Sup?", "How are you doing fellow kid?",
+    "Hello", "What’s shakin’?", "I'm here for you", "What’s up?", "Everything OK?", "Hey", "Yo", "Hi! (˵'v'˵)/ ", "Yes hello", "Can I help you?", "Sup?", "How are you doing fellow kid?",
     "Are you talking to me? Are you. Talking to. Me?", "eyo", "How have you been?", "How are ya?",
-    "I'm watching you", "What?", "<:x_Susan:668503800947933184>", "Am birb.", "You called?", "What do you want?",
+    "I'm watching you", "What?", "<:x_Susan:668503800947933184>", "You called?", "What do you want?",
     "Ugh, not again...",
     "I̶̠̘̮͎̝̩̪͉̝̯̯̤̱͒̏̕͘̚͜͝ͅ ̴̢̮̰͔͓̪̱̺̺̤̮͛̂̊͜ḧ̸̡̝̘̦̭͇͓̣̺̰͍̭̲̫̝̇̽́a̵̤̹̍̽͊̅̀͌͜v̵̨̧̡̻̹̮͕̖̭̼͈̲̦̈́́̄̊̂̽̓̅̒̃̅͐͘͠͝e̴̡̨̛͚͇͔͙̻̯͔̹̫̮̫̙͗͗̍̊̇͐̂̀͘ ̷͕͚͍̦̲̯̥̱̼̩̪̠̐͑̃̈́͒͜͝ͅb̸̧̧̛̥͖̜̞̑͑͗̋̽̆͐ḛ̶͋́̑́̉̍̽̃̎͘e̴̘̣͎͉̰̮͚̙͓̮̥̥̹͛͜ͅn̷̘̥̖͓̗̭͎̹̖̯̗̩̯̙̣̊̈́ ̶̨̧̥̺̦̤̯̮̦̥̳̆̂̐s̴͉̥̒̔̃̓͊̇̏̃͑̿͐̕͝ú̴̡̺̫́̌̎̀̈́́͌́̈͘͘͝m̵̰̬̮̊̆̒̂̅̌͌͒͋͐͐̈́̊͘͠ḿ̶̤̜̥̥̣̙̿́̂̓͘͠ȏ̵͇̜̠̦̽̀̈́ń̸̨̰̪͖̗͍̞̀̿̄̑̔̒̕é̷͔͚̱͓͕͙̺̖͗̏̾̂͐̄d̸̒"
 ]
 
 #This is a joke a i swear
 threat = [
-    "birdmeat", "birdbrain", "kick", "punch", "hate", "choke", "punk", "bitch",
+    "birdmeat", "birdbrain", "kick", "punch", "hate", "choke", "punk", "bitch", "bad",
     "scare", "fear", "break","shut", "menace", "uck", "buggy", "annoying", "mess",
     "stupid", "threat", "stink", "dum", "useless", "waste", "smell", "kill",
-    "nasty","weeb", "gross", "end", "ugly", "poor", "narc"
+    "nasty","weeb", "gross", " end", "ugly", "poor", "narc"
 ]
 retort1 = [
     "im gonna un-carbonate your soda if you dont be quiet",
@@ -74,10 +74,10 @@ retort2 = [
     "it's all water under the bridge now", "its ok, bots don't have feelings anyways"
 ]
 
-praise = ["nice", "pretty", "smart", "best", "beautiful", "precious", "helpful", "handsome"]
+praise = ["nice", "awesome", "pretty", "smart", "best", "beautiful", "precious", "helpful", "handsome"]
 praiseThank = [
-  "Youre making me blush (˵>v<˵)","Why thank you :two_hearts:", "Youre too kind (˵•v•˵)",
-   "Trying my best for you! :two_hearts:", ":^)", "(˵•v•˵)", "(˵>v<˵)", ":flushed::two_hearts:",":brown_heart:", ":two_hearts:"
+  "Gracias", "Youre making me blush (˵>v<˵)","Why thank you :two_hearts:", "Youre too kind (˵•v•˵)",
+   "Trying my best to help! :two_hearts:", ":^)", "(˵•v•˵)", "(˵>v<˵)", ":flushed::two_hearts:",":brown_heart:", ":two_hearts:"
   ]
 
 youreWelcome = ["You're welcome!", "Happy to help!", "Always here when you need me... aside from downtime ( ͡° ͜ʖ ͡°)", "Anytime!", "Here to help!", "You're welcome, good luck out there!", "You got this!", "Anytime. Good luck out there! (˵՞v՞˵)✧", "Gotchu fam", "At your service :^)" ]
@@ -216,9 +216,9 @@ initial_extensions = ['newsemester','search', 'info'] #modmail defunct till furt
 for extension in initial_extensions:
     try:
         bot.load_extension(extension)
-        print(f'Success! Loaded extension {extension}.')
+        print(f'Success! Loaded extension: {extension}')
     except:
-        print(f'Failed to load extension {extension}.', file=sys.stderr)
+        print(f'Failed to load extension: {extension}.', file=sys.stderr)
     traceback.print_exc()
 
 #===============================================================================================
