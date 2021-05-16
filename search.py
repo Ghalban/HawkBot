@@ -7,8 +7,7 @@ from bs4 import BeautifulSoup
 class SearchCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        searchFilters = ['all', 'academic', 'department', 'page',
-                         'people']  #incl alt forms
+        searchFilters = ['all', 'academic', 'department', 'page', 'people'] 
 
         #Search msu website
         @bot.command()
@@ -16,7 +15,7 @@ class SearchCog(commands.Cog):
             '''
             Returns 3 search results scraped from MSU hawkeye search
             '''
-            word_list = search.split()
+            word_list = search.lower().split()
             last = word_list[-1]
 
             if last not in searchFilters:
@@ -41,7 +40,7 @@ class SearchCog(commands.Cog):
 
             soup = BeautifulSoup(page.text, 'html.parser')
 
-            # Get hits from website
+            # Get hits from website / soup object
 
             try:
                 try:
@@ -74,34 +73,37 @@ class SearchCog(commands.Cog):
                         listCap = 3
                     plurality = " results!"
 
-                for result in soup.find_all('p', {'class': 'title'},
-                                            limit=listCap):
+                for result in soup.find_all('p', {'class': 'title'},limit=listCap):
                     a_tag = result.find('a')
                     links.append(a_tag.attrs['href'])
                     titles.append(result.find('a').get_text())
+                    
                     try:
                       summary_item = result.find_next_sibling('p')
                       summaries.append(summary_item.get_text())
                     except:
                       #print("looks like theres a missing element, lets fill it with a blank lol")
                       summaries.append('')
-                
+
+                # Repair links and build listings to ensure proper display  of results
                 count = 0;
                 listing = ""
                 while (count < listCap):
-                  if ("https://www.montclair.edu" not in links[count]):
-                    links[count] = "https://www.montclair.edu"+links[count]
+
+                  if ('www.montclair.edu' not in links[count]):
+                    links[count] = 'www.montclair.edu'+links[count]
+                    if ('https://' not in links[count]):
+                      links[count] = 'https://' + links[count]
 
                   listing = listing + (f"\n\n[**{titles[count]}**]({links[count]})\n{summaries[count]}")
                   # print(titles[count])
                   # print (summaries[count])
                   count = count + 1
-
+                # print(links)
                 # print (listing)
                   
                 embed = discord.Embed(
-                    title=(f"Found {hits} {plurality}"),
-                    url=url,
+                    title=(f"Found {hits}{plurality}"),
                     description=
                     (f"*Here's a snapshot of what I found.* [***Click here for more.***]({url}){listing}"
                      ),
@@ -138,7 +140,7 @@ class SearchCog(commands.Cog):
                     inline=False)
                 embed.set_thumbnail(
                     url=
-                    "https://hotemoji.com/images/dl/m/left-pointing-magnifying-glass-emoji-by-twitter.png"
+                    "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/281/warning_26a0-fe0f.png"
                 )
                 await ctx.send(embed=embed)
                 await ctx.send(url)
