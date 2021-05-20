@@ -19,9 +19,10 @@
       *curriculum (A&I special)
       parking registration
  
- **Course catalog search**
-  +   need to dissect catalog website http://catalog.montclair.edu/search/?search=
+**Course catalog search**
+  +   need to dissect [catalog website](http://catalog.montclair.edu/search/?search=)
   
   
-check if its in the right server before sending this version*
+MAJOR update:
+  Combine with instance of [Red Discord Bot](https://github.com/Cog-Creators/Red-DiscordBot)
 
