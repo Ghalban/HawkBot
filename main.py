@@ -27,7 +27,7 @@ async def on_ready():
 
 goodmorning = ["🇪🇸 Buenos días!",
     "🇮🇪 Top O' the mornin' to ya laddies!", "🇩🇪 Guten Morgen!",
-    "No.", "🇮🇹 Buongiorno!", "Good morning!", "🇸🇦!صباح الخير", "🇯🇵 おはよう！\nhttps://res.cloudinary.com/animillust/video/upload/v1617837295/audio/weebohio_qyllfi.webm","https://youtu.be/03m9DzSEB5M", "https://youtu.be/5CGdX1hhxyo","https://youtu.be/8O27jMawP-o?t=11", "https://youtu.be/ii3NEUSiOdo","https://youtu.be/8nGcWFRwhOM"]
+    "No.", "🇮🇹 Buongiorno!","Good morning sunshine's", "Good morning!", "🇸🇦!صباح الخير", "🇯🇵 おはよう！\nhttps://res.cloudinary.com/animillust/video/upload/v1617837295/audio/weebohio_qyllfi.webm","https://youtu.be/03m9DzSEB5M", "https://youtu.be/5CGdX1hhxyo","https://youtu.be/8O27jMawP-o?t=11", "https://youtu.be/ii3NEUSiOdo","https://youtu.be/8nGcWFRwhOM", "Not in the mood yet", "I'm tired", "no u"]
 
 hello = [
     "Hello", "What’s shakin’?", "I'm here for you", "What’s up?", "Everything OK?", "Hey", "Yo", "Hi! (˵'v'˵)/ ", "Yes hello", "Can I help you?", "Sup?", "How are you doing fellow kid?",
@@ -87,7 +87,7 @@ magicEightBall = [
     "Don't you know?", "Use that one braincell you have, damn.",
     "Your question caused me brain damage. Time for me to stop thinking today.",
     "Don’t count on it.", "It is certain.", "It is decidedly so.",
-    "Most likely.", "My reply is no.", "Silence.", "You wouldnt wanna know",
+    "Most likely.", "My reply is no.", "Silence.", "You wouldnt wanna know?",
     "Give me your credit card number first, then I'll answer you.", "My sources say no.",
     "Outlook not so good.", "Outlook good.", "Wouldnt you like to know?",
     "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.",
@@ -175,7 +175,7 @@ async def secrets(message):
   if "bird" in message.content.lower() or "birb" in message.content.lower():
     await message.channel.send(random.choice(amBird))
     return;
-  if '...2' in message.content.lower(): #Peggle 2 E3 gif
+  if '2!' in message.content.lower(): #Peggle 2 E3 gif
     await message.channel.send("https://tenor.com/bdqG4.gif")
     return;
 
